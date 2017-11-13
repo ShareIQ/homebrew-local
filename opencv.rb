@@ -18,6 +18,7 @@ class Opencv < Formula
     rebuild 2
     root_url "https://storage.googleapis.com/shareiq-packages/brew"
     sha256 "6a93e730a746e856f53f3733ec96a55c5799a174876f0d0bfb056a6f0a322ed3" => :high_sierra
+    sha256 "25716fdd7cb4246556e540b2c77398d8d1c985971261ca3fb84714ca6f3c00d4" => :sierra
   end
 
   depends_on "cmake" => :build
