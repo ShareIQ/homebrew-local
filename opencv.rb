@@ -15,16 +15,15 @@ class Opencv < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 "2630c2fd1da17ddcb66cfc443d274f42d1e5ae22689f168d4c643f1d43d54470" => :high_sierra
-    sha256 "68b6d2312f1593fa82033504eaf58aed90a9038a21096e5a275c16e861f1f2fe" => :sierra
-    sha256 "5f36f3c1d5790bfac52dfeb131798d5bf0a0ed4aed8f8523223b502515b76339" => :el_capitan
+    rebuild 2
+    root_url "https://storage.googleapis.com/shareiq-packages/brew"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "eigen"
   depends_on "ffmpeg"
+  depends_on "jasper"
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
@@ -75,7 +74,7 @@ class Opencv < Formula
       -DWITH_FFMPEG=ON
       -DWITH_GPHOTO2=OFF
       -DWITH_GSTREAMER=OFF
-      -DWITH_JASPER=OFF
+      -DWITH_JASPER=ON
       -DWITH_OPENEXR=ON
       -DWITH_OPENGL=OFF
       -DWITH_QT=OFF
