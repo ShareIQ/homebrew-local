@@ -7,7 +7,7 @@ class Opencv < Formula
 
   bottle do
     root_url "https://storage.googleapis.com/shareiq-packages/brew"
-    sha256 "ff55e1d881d90f280cd8fa5e302b7a3b3a65b1a3cc526402a53f9b3c3f08249e" => :high_sierra
+    sha256 "be060738b9b44e93ceca39c627d66b11b91aad70a2bd50ae88f0239c058ce79c" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -85,8 +85,8 @@ class Opencv < Formula
     ]
 
     if build.bottle?
-      args += %w[-DENABLE_SSE41=OFF -DENABLE_SSE42=OFF -DENABLE_AVX=OFF
-                 -DENABLE_AVX2=OFF]
+      args += %w[-DENABLE_SSE41=ON -DENABLE_SSE42=ON -DENABLE_AVX=ON
+                 -DENABLE_AVX2=ON]
     end
 
     mkdir "build" do

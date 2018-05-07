@@ -17,7 +17,7 @@ brew untap shareiq/local
 
 ## Opencv
 
-Same as core, but with added jpeg2000 support
+Same as core, but with added jpeg2000 support and SSE and AVX enabled
 
 ```shell
 brew install opencv
