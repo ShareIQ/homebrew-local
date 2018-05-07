@@ -4,14 +4,13 @@ class Opencv < Formula
   revision 1
 
   stable do
-    url "https://github.com/opencv/opencv/archive/3.4.0.tar.gz"
-    sha256 "678cc3d2d1b3464b512b084a8cca1fad7de207c7abdf2caa1fed636c13e916da"
+    url "https://github.com/opencv/opencv/archive/3.4.1.tar.gz"
+    sha256 "f1b87684d75496a1054405ae3ee0b6573acaf3dad39eaf4f1d66fdd7e03dc852"
   end
 
   bottle do
-    rebuild 2
     root_url "https://storage.googleapis.com/shareiq-packages/brew"
-    sha256 "1414f37be4ef43de4e63e1972f28d9a09e0e0d71d7c19c1e8cbdf97865b08f82" => :high_sierra
+    sha256 "ff55e1d881d90f280cd8fa5e302b7a3b3a65b1a3cc526402a53f9b3c3f08249e" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -31,8 +30,8 @@ class Opencv < Formula
   needs :cxx11
 
   resource "contrib" do
-    url "https://github.com/opencv/opencv_contrib/archive/3.4.0.tar.gz"
-    sha256 "699ab3eee7922fbd3e8f98c68e6d16a1d453b20ef364e76172e56466dc9c16cd"
+    url "https://github.com/opencv/opencv_contrib/archive/3.4.1.tar.gz"
+    sha256 "298c69ee006d7675e1ff9d371ba8b0d9e7e88374bb7ba0f9d0789851d352ec6e"
   end
 
   def install
