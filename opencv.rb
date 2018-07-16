@@ -1,13 +1,13 @@
 class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
-  url "https://github.com/opencv/opencv/archive/3.4.1.tar.gz"
-  sha256 "f1b87684d75496a1054405ae3ee0b6573acaf3dad39eaf4f1d66fdd7e03dc852"
-  revision 5
+  url "https://github.com/opencv/opencv/archive/3.4.2.tar.gz"
+  sha256 "81dbd5e7e9f8a4c936b94629bf4765745942a1d634ae38ec08bc57b73b28ffc5"
+  revision 1
 
   bottle do
     root_url "https://storage.googleapis.com/shareiq-packages/brew"
-    sha256 "be060738b9b44e93ceca39c627d66b11b91aad70a2bd50ae88f0239c058ce79c" => :high_sierra
+    sha256 "31871bbdb6e737f514006b7131083a6e2aaaaa871e14383a44ed759c8d618c71" => :high_sierra
   end
 
   depends_on "cmake" => :build
@@ -27,8 +27,8 @@ class Opencv < Formula
   needs :cxx11
 
   resource "contrib" do
-    url "https://github.com/opencv/opencv_contrib/archive/3.4.1.tar.gz"
-    sha256 "298c69ee006d7675e1ff9d371ba8b0d9e7e88374bb7ba0f9d0789851d352ec6e"
+    url "https://github.com/opencv/opencv_contrib/archive/3.4.2.tar.gz"
+    sha256 "45a52764ebd2558fa0b7fd8dc47379b37dd0956d912abbf7c786228374fdf60d"
   end
 
   def install
@@ -93,6 +93,11 @@ class Opencv < Formula
       system "cmake", "..", *args
       system "make"
       system "make", "install"
+      system "make", "clean"
+      system "cmake", "..", "-DBUILD_SHARED_LIBS=OFF", *args
+      system "make"
+      lib.install Dir["lib/*.a"]
+      lib.install Dir["3rdparty/**/*.a"]
     end
   end
 
